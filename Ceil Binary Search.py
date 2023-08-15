@@ -1,4 +1,4 @@
-arr=[2,3,5,9,14,16,18]
+arr=[-2,-1,-1,1,2,3]
 target=int(input())
 def ceil(arr,target):
     low=0
@@ -11,6 +11,6 @@ def ceil(arr,target):
             high=mid-1
         else:
             return mid
-    return low,high
+    return low
 
 print(ceil(arr,target))
