@@ -1,10 +1,10 @@
-arr=[-2,-1,-1,1,2,3]
+arr=[1,2,8,10,11,12,19]
 target=int(input())
 def ceil(arr,target):
     low=0
     high=len(arr)-1
     while low<=high:
-        mid = low + (high-low)//2
+        mid = low + (high-low)
         if arr[mid]<target:
             low=mid+1
         elif arr[mid]>target:

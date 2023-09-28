@@ -9,12 +9,15 @@ def lastOccurence(arr,x):
         elif arr[mid]<x:
             low = mid+1
         else :
-            if (mid==0 or (arr[mid+1]!=arr[mid])):
-                return mid
-            else:
-                low = mid+1
+            try:
+                if (mid==0 or (arr[mid+1]!=arr[mid])):
+                    return mid
+                else:
+                    low = mid+1
+            except IndexError :
+                return high
     return -1
 
-arr=[1,2,3,4,5,5,5,5,5]
-x=6
+arr=[2,3,4]
+x=4
 print(lastOccurence(arr,x))
