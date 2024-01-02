@@ -8,15 +8,20 @@ def printBottomView(root):
     printBottomViewUtil(root, d, 0, 0)
     for i in sorted(d.keys()):
         print(d[i][0], end=" ")
+
 def printBottomViewUtil(root, d, hd, level):
     if root is None:
         return
+
     if hd in d:
         if level >= d[hd][1]:
             d[hd] = [root.data, level]
+
     else:
         d[hd] = [root.data, level]
+
     printBottomViewUtil(root.left, d, hd - 1, level + 1)
+
     printBottomViewUtil(root.right, d, hd + 1, level + 1)
 
 if __name__ == '__main__':
