@@ -1,12 +1,10 @@
-from heapq import heapify,heappop,heappush
-s = "cccaaa"
-nums=[]
-
-for i in s :
-    heappush(nums,i)
-
-for i in range(len(s)) :
-    print(heappop(nums))
-
-for i,j in enumerate(s):
-    print(i,j)
+class Solution:
+    def frequencySort(self, s: str) -> str:
+        counter = Counter(s)
+        pq = [(-freq,char) for char, freq in counter.items()]
+        heapq.heapify(pq)
+        result = ""
+        while pq:
+            freq, char = heapq.heappop(pq)
+            result += char* -freq
+        return result  
