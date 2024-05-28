@@ -21,4 +21,27 @@ class Solution:
         node1.val,node2.val=node2.val,node1.val
 
         return head
+
+    # Definition for singly-linked list.
+    # class ListNode:
+    #     def __init__(self, val=0, next=None):
+    #         self.val = val
+    #         self.next = next
+    class Solution:
+        def swapNodes(self, head: Optional[ListNode], k: int) -> Optional[ListNode]:
+            fast = slow = head
+
+            for _ in range(k - 1):
+                fast = fast.next
+
+            first = fast
+            while fast and fast.next:
+                fast = fast.next
+                slow = slow.next
+
+            temp = first.val
+            first.val = slow.val
+            slow.val = temp
+            return head
+
     
